@@ -1,0 +1,5 @@
+baseURL: https://rocksolt.github.io/
+params:
+  title: Rockridge Solutions
+  subtitle: Commonsense Software and Consulting
+publishDir: docs

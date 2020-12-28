@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ $.Site.Params.Title }} {{ with .Title }} | {{ . }}{{ end }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    {{ $bulma := resources.Get "style.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $bulma.RelPermalink }}">
+</head>
+
+<body>
+    {{ block "header" . }}
+        {{ partial "header.html" . }}
+    {{ end }}
+
+    <div class="section">
+        <div class="container main">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </div>
+
+    {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+    {{ end }}
+</body>
+
+</html>

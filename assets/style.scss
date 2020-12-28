@@ -1,3 +1,24 @@
 $primary: #ee9a00;
 @import "bulma/bulma.sass";
 
+body {
+  background-image: url("images/bay-bridge-from-bart-postcard.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.main {
+  padding: 20px;
+}
+
+.rails-logo {
+  float: right;
+  max-width: 25%
+}
+
+.peoplesoft {
+  background-color: #0067ab !important;
+}
+.ruby {
+  background-color: #A91401 !important;
+}
