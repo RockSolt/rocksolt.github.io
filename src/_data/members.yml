@@ -1,0 +1,23 @@
+- name: Todd Kummer
+  email: todd@rockridgesolutions.com
+  github: https://github.com/toddkummer
+  linked_in: https://www.linkedin.com/in/rockridgesolutions
+  picture: TK-2024.jpg
+  bio: |
+    With over 20 years of experience building software, Todd's framework of choice these days
+    is Ruby on Rails. His long history of product development—for software companies, internal 
+    business applications, and consumer websites—helps him find the right balance between 
+    short-term and long-term requirements and put in place best practices that will help guide 
+    the project for its full lifecycle.
+
+- name: John Beretz
+  email: john@rockridgesolutions.com
+  github: https://github.com/jpberetz
+  linked_in: https://www.linkedin.com/in/jberetz
+  picture: JB-2024.jpg
+  bio: |
+    An expert specializing in re-engineering application user experience for increased efficiency 
+    and user loyalty, John has deep experience in all phases of the development life-cycle, from 
+    iterating through mockups with stakeholders to writing tight low-level code that can be 
+    maintained long after he's gone. He is an effective and dynamic instructor with demonstrated 
+    success developing compelling content and leading students through complex technical material.
