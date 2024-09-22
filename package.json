@@ -15,5 +15,8 @@
     "postcss-load-config": "^6.0.1",
     "postcss-preset-env": "^10.0.5",
     "read-cache": "^1.0.0"
+  },
+  "dependencies": {
+    "bulma": "^1.0.2"
   }
 }
