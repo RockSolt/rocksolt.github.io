@@ -1,4 +1,9 @@
-@import "~bulma/bulma";
+$orange: #ee9a00;
+
+// Path to Bulma's sass folder
+@use "~bulma/sass" with (
+  $primary: $orange
+);
 
 body.postcard {
   background-image: url("/images/bay-bridge-from-bart-postcard.jpg");
