@@ -6,7 +6,7 @@
   <body class="<%= data.layout %> <%= data.page_class %> postcard">
     <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
 
-    <main>
+    <main class="main container">
       <%= yield %>
     </main>
 

@@ -8,5 +8,28 @@ $orange: #ee9a00;
 body.postcard {
   background-image: url("/images/bay-bridge-from-bart-postcard.jpg");
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: top -30px center; // show a bit more of the tops of the buildings
+}
+
+.ruby-red {
+  background-color:#a91401;
+
+  & p {
+    @extend .has-text-white
+  }
+}
+
+.rails-logo {
+	float: right;
+	max-width: 25%;
+}
+
+
+
+main .section {
+  padding-bottom: 0;
+}
+
+.section + .section {
+  padding-top: 0;
 }
