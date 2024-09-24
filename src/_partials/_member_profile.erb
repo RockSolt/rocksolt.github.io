@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-content pb-1">
+    <div class="columns">
+      <div class="column">
+        <img src="images/<%= member.picture %>" alt="Todd Kummer">
+      </div>
+      <div class="column is-two-thirds">
+        <p class="title mb-2"><%= member.name %></p>
+        <div class="content">
+          <%= member.bio %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="<%= member.linked_in %>" class="card-footer-item">
+      <img src="images/LI-In-Bug.png" class="linked-in-logo">
+    </a>
+    <a href="<%= member.github %>" class="card-footer-item">
+      <img src="images/github-mark.png" class="icon">
+    </a>
+    <a href="mailto:<%= member.email %>" class="card-footer-item">
+      <img src="images/mail.png" class="icon">
+    </a>
+  </div>
+</div>
