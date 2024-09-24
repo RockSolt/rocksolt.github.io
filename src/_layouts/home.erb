@@ -14,7 +14,9 @@ layout: default
       <article class="box">
         <h1 class="title is-4"><%= data.title %></h1>
         <img src="<%= data.image %>">
-        <%= yield %>
+        <div class="content">
+          <%= yield %>
+        </div>
       </article>
     </div>
 
