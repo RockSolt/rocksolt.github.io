@@ -19,7 +19,12 @@ body.postcard {
   }
 }
 
-.rails-logo {
+// pretty specific to override bulma specifity of (0, 1, 4)
+article.message a:not(.button):not(.tag):not(.dropdown-item) {
+  text-decoration: none;
+}
+
+.highlight-logo {
 	float: right;
 	max-width: 25%;
 }
