@@ -1,0 +1,13 @@
+<article class="message <%= highlight.message_class %>">
+
+  <%= optional_link highlight.link do %>
+    <div class="message-header <%= highlight.message_header_class %>">
+      <p><%= highlight.title %></p>
+    </div>
+    <div class="message-body content">
+      <img src="images/<%= highlight.logo %>" class="highlight-logo">
+      <%= markdownify highlight.description %>
+    </div>
+  <% end %>
+
+</article>

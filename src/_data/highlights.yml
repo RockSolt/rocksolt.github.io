@@ -1,0 +1,19 @@
+- title: Ruby on Rails Contracting
+  message_header_class: ruby-red
+  logo: ruby-on-rails-logo.png
+  description: |
+    Leverage the power of Ruby and Rails to build scalable applications quickly. Looking for an architect to 
+    help build out a new solution, or conversely, someone to help rescue a code base that has gone astray?
+
+    We've got you covered.
+
+- title: Filterameter
+  message_class: is-primary
+  message_header_class: has-text-white
+  logo: rubygems_logo_red.png
+  link: https://github.com/RockSolt/filterameter
+  description: |
+    Simplify and speed development of Rails controllers by making filter parameters declarative with the Filterameter gem.
+
+    With the look and feel of a Rails DSL, declare filters and sorts for search pages. The next developer in (hey, maybe 
+    that's you!) will thank you. It's obvious what filter parameters are available and easy to add more.
