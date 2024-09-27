@@ -5,6 +5,8 @@ $orange: #ee9a00;
   $primary: $orange
 );
 
+@use "syntax-highlighting";
+
 body.postcard {
   background-image: url("/images/bay-bridge-from-bart-postcard.jpg");
   background-repeat: no-repeat;
@@ -22,6 +24,11 @@ body.postcard {
 // pretty specific to override bulma specifity of (0, 1, 4)
 article.message a:not(.button):not(.tag):not(.dropdown-item) {
   text-decoration: none;
+}
+
+// the content class give descendant p elements a margin bottom; this adds the same to code blocks
+.content .language-ruby {
+  margin-bottom: 16px;
 }
 
 .highlight-logo {
