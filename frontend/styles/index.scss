@@ -48,6 +48,8 @@ main .section {
   padding-top: 0;
 }
 
-.theme-dark .github.icon {
-  content: url("/images/github-mark-white.png")
+@media (prefers-color-scheme: dark) {
+  .github.icon {
+    content: url("/images/github-mark-white.png")
+  }
 }
