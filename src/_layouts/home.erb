@@ -10,7 +10,7 @@ layout: default
 </section>
 
 <section class="section columns">
-    <div class="column is-two-thirds">
+    <div class="column is-three-fifths">
       <article class="box">
         <h1 class="title is-4"><%= data.title %></h1>
         <img src="<%= data.image %>">
@@ -20,7 +20,7 @@ layout: default
       </article>
     </div>
 
-    <div class="column">
+    <div class="column is-two-fifths">
       <% site.data.highlights.each do |highlight| %>
         <%= render "highlight", highlight: highlight %>
       <% end %>

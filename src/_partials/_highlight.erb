@@ -7,6 +7,17 @@
     <div class="message-body content">
       <img src="images/<%= highlight.logo %>" class="highlight-logo">
       <%= markdownify highlight.description %>
+
+      <%# this is pretty specific to the contracting highlight for now %>
+      <% if highlight.show_recommendations %>
+        <% recommendation = site.data.recommendations.first %>
+        <div class="content">
+          <blockquote class="py-0">
+            <p class="is-italic">"<%= recommendation.text.strip %>"</p>
+            <p><%= "#{recommendation.name}, #{recommendation.role}" %>
+          </blockquote>
+        </div>
+      <% end %>
     </div>
   <% end %>
 
