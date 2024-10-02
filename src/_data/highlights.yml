@@ -1,6 +1,7 @@
 - title: Ruby on Rails Contracting
   message_header_class: ruby-red
   logo: ruby-on-rails-logo.png
+  show_recommendations: true
   description: |
     Leverage the power of Ruby and Rails to build scalable applications quickly. Looking for an architect to 
     help build out a new solution, or conversely, someone to help rescue a code base that has gone astray?
