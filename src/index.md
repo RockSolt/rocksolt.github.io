@@ -2,6 +2,8 @@
 layout: home
 title: The Story of Software
 image: "images/once-upon-a-time.jpg"
+og_image: "https://rockridgesolutions.com/images/bay-bridge-from-bart-postcard.jpg"
+og_description: Find out why building good software means telling the right story.
 ---
 
 Business is the story of an employee that gets hired, gets promoted, and gets a raise. It is the story 
