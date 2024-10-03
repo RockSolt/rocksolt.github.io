@@ -53,3 +53,11 @@ main .section {
     content: url("/images/github-mark-white.png")
   }
 }
+
+.recommendation {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
