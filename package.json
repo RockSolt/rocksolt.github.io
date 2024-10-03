@@ -18,6 +18,7 @@
     "sass": "^1.79.3"
   },
   "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
     "bulma": "^1.0.2"
   }
 }

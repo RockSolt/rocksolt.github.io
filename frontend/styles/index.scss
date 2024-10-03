@@ -53,3 +53,22 @@ main .section {
     content: url("/images/github-mark-white.png")
   }
 }
+
+.recommendations {
+  display: grid;
+  grid-template: 1/1;
+  align-items: center;
+}
+
+.recommendation {
+  grid-area: 1/1;
+  display: block;
+  transition: all .6s .6s cubic-bezier(.5, 0, .5, 1);
+  transition-property: opacity, transform;
+}
+
+.recommendation[hidden] {
+  transition-delay: 0;
+  opacity: 0;
+  transform: scale(0.8);
+}
