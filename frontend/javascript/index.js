@@ -2,8 +2,6 @@ import { Application } from "@hotwired/stimulus"
 // Import all JavaScript & CSS files from src/_components
 import components from "$components/**/*.{js,jsx,js.rb,css}"
 
-console.info("Bridgetown is loaded!")
-
 window.Stimulus = Application.start()
 
 import controllers from "./controllers/**/*.{js,js.rb}"
