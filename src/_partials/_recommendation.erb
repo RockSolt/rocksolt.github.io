@@ -1,4 +1,4 @@
-<div class="content recommendation mb-0<%= ' active' if active %>">
+<div class="content recommendation mb-0" <%= 'hidden' if hidden %>>
   <blockquote class="py-0">
     <p class="is-italic">"<%= recommendation.text.strip %>"</p>
     <p><%= "#{recommendation.name}, #{recommendation.role}" %>

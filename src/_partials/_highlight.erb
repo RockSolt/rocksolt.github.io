@@ -10,9 +10,9 @@
 
       <%# this is pretty specific to the contracting highlight for now %>
       <% if highlight.show_recommendations %>
-        <div data-controller="carousel" data-carousel-item-selector-value=".recommendation">
+        <div class="recommendations" data-controller="carousel" data-carousel-item-selector-value=".recommendation">
           <% site.data.recommendations.each_with_index do |recommendation, index| %>
-            <%= render "recommendation", recommendation: recommendation, active: index.zero? %>
+            <%= render "recommendation", recommendation: recommendation, hidden: !index.zero? %>
           <% end %>
         </div>
       <% end %>

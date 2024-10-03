@@ -54,10 +54,21 @@ main .section {
   }
 }
 
-.recommendation {
-  display: none;
+.recommendations {
+  display: grid;
+  grid-template: 1/1;
+  align-items: center;
+}
 
-  &.active {
-    display: block;
-  }
+.recommendation {
+  grid-area: 1/1;
+  display: block;
+  transition: all .6s .6s cubic-bezier(.5, 0, .5, 1);
+  transition-property: opacity, transform;
+}
+
+.recommendation[hidden] {
+  transition-delay: 0;
+  opacity: 0;
+  transform: scale(0.8);
 }
