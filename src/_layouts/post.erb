@@ -2,6 +2,17 @@
 layout: default
 ---
 
-<h1><%= data.title %></h1>
+<section class="hero is-small">
+  <div class="hero-body">
+    <p class="title has-text-white"><%= data.title %></p>
+    <p class="subtitle has-text-white"><%= data.subtitle %></p>
+  </div>
+</section>
 
-<%= yield %>
+<section class="section">
+  <article class="box">
+    <div class="content">
+      <%= yield %>
+    </div>
+  </article>
+</section>
