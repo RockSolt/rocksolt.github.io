@@ -11,3 +11,11 @@ description: >-
   Rockridge Solutions is a boutique software consulting firm that has been helping clients tell
   the story of their businesses for 20 years. Let Todd and John leverage the power of Ruby on 
   Rails to help tell your story.
+
+menu:
+  # home:
+  #   - name: Blog
+  #     url: "/posts"
+  post:
+    - name: Rockridge Solutions
+      url: "/"

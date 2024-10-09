@@ -1,0 +1,14 @@
+<nav class="navbar is-primary has-shadow" role="navigation" aria-label="main navigation">
+
+  <%# is-active prevents the menu from disappearing < 1024px %>
+  <%# container keeps the menu within the same boundaries as the main content %>
+  <div class="navbar-menu is-active container">
+    <div class="navbar-end">
+      <% (links || []).each do |link| %>
+        <a class="navbar-item has-text-white has-text-weight-bold" href="<%= link.url %>">
+          <%= link.name %>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</nav>
