@@ -9,7 +9,7 @@
 <meta property="og:site_name" content="Rockridge Solutions">
 <meta property="og:title" content="<%= resource_title %>">
 <meta property="og:description" content="<%= resource.data.og_description %>">
-<meta property="og:image" content="<%= resource.data.og_image %>">
+<meta property="og:image" content="<%= resource.data.og_image || metadata.og_image %>">
 <link rel="stylesheet" href="<%= asset_path :css %>" />
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">

@@ -17,9 +17,9 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 
-url: "" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://rockridgesolutions.com" # the base hostname & protocol for your site, e.g. https://example.com
 
-permalink: pretty
+permalink: simple_ext
 template_engine: erb
 
 # Other options you might want to investigate:
