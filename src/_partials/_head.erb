@@ -7,7 +7,7 @@
 <meta property="og:url" content="https://rockridgesolutions.com">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rockridge Solutions">
-<meta property="og:title" content="<%= resource_title %>">
+<meta property="og:title" content="<%= [resource_title, data.subtitle.presence].compact.join(': ') %>">
 <meta property="og:description" content="<%= resource.data.og_description %>">
 <meta property="og:image" content="<%= resource.data.og_image || metadata.og_image %>">
 <link rel="stylesheet" href="<%= asset_path :css %>" />
