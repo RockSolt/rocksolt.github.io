@@ -1,14 +1,16 @@
 ---
-layout: page
+layout: default
 title: Posts
 ---
 
-<ul>
+<section class="section">
   <% collections.posts.resources.each do |post| %>
-    <li>
-      <a href="<%= post.relative_url %>"><%= post.data.title %></a>
-    </li>
+    <a href="<%= post.relative_url %>" class="">
+    <article class="box post-summary">
+      <h1 class="title is-4"><%= post.data.title %></h1>
+      <h1 class="subtitle is-6"><%= post.data.subtitle %></h1>
+      <p><%= post.data.og_description %></p>
+    </article>
+    </a>
   <% end %>
-</ul>
-
-If you have a lot of posts, you may want to consider adding [pagination](https://www.bridgetownrb.com/docs/content/pagination)!
+</section>
