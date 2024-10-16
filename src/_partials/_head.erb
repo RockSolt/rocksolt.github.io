@@ -3,12 +3,12 @@
 <% resource_title = strip_html(strip_newlines(title)) %>
 <title><% if resource_title != "Index" %><%= resource_title %> | <%= metadata.title %><% else %><%= metadata.title %>: <%= metadata.tagline %><% end %></title>
 
-<meta name="description" content="<%= metadata.description %>" />
+<meta name="description" content="<%= resource.data.description %>" />
 <meta property="og:url" content="https://rockridgesolutions.com">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rockridge Solutions">
 <meta property="og:title" content="<%= [resource_title, data.subtitle.presence].compact.join(': ') %>">
-<meta property="og:description" content="<%= resource.data.og_description %>">
+<meta property="og:description" content="<%= resource.data.og_description || resource.data.description %>">
 <meta property="og:image" content="<%= resource.data.og_image || metadata.og_image %>">
 <link rel="stylesheet" href="<%= asset_path :css %>" />
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
