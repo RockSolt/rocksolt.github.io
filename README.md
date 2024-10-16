@@ -1,73 +1,63 @@
-# Bridgetown Website README
+# Rockridge Solutions
 
-Welcome to your new Bridgetown website! You can update this README file to provide additional context and setup information for yourself or other contributors.
+This is the source of [the Rockridge Solutions website](https://rockridgesolutions.com/). It is built using
+[the Bridgetown Static Site generator](https://www.bridgetownrb.com/docs/). It is published using GitHub
+Pages (with the domain host pointing to the Pages site).
 
-## Table of Contents
+## Site Architecture
 
-- [Prerequisites](#prerequisites)
-- [Install](#install)
-- [Development](#development)
-- [Commands](#commands)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
+There are three markdown pages at the root of the `src` folder that represent pages in the generated website:
+- index.md: The home page.
+- posts.md: Available though not linked from anywhere. The plan is to add a link to the navigation bar when there
+            are more entries.
+- about.md: This should either be removed or have content built. It is currently the Bridgetown default. There are
+            no links to this page.
 
-## Prerequisites
+## Layouts
 
-- [GCC](https://gcc.gnu.org/install/)
-- [Make](https://www.gnu.org/software/make/)
-- [Ruby](https://www.ruby-lang.org/en/downloads/)
-  - `>= 2.7`
-- [Bridgetown Gem](https://rubygems.org/gems/bridgetown)
-  - `gem install bridgetown -N`
-- [Node](https://nodejs.org)
-  - `>= 12`
-- [Yarn](https://yarnpkg.com)
+The layouts are `erb` files and translate pretty closely to Rails. The `default` layout is the parent of the other
+layouts.
 
-## Install
+### Default
 
-```sh
-cd bridgetown-site-folder
-bundle install && yarn install
-```
-> Learn more: [Bridgetown Getting Started Documentation](https://www.bridgetownrb.com/docs/).
+The parent layout renders the head and navigation bar via partials, then wraps the yield in a `main` element.
 
-## Development
+(There is a footer, but there is nothing in the partial.)
 
-To start your site in development mode, run `bin/bridgetown start` and navigate to [localhost:4000](https://localhost:4000/)!
+### Home
 
-Use a [theme](https://github.com/topics/bridgetown-theme) or add some [plugins](https://www.bridgetownrb.com/plugins/) to get started quickly.
+The landing page layout is pretty custom and only used once. The "highlights" on the right and the "member profiles" at the bottom are both generated from a data file and a partial.
 
-### Commands
+### Posts
 
-```sh
-# running locally
-bin/bridgetown start
+This loops through all the posts and shows a box for each post with the following info from the post's metadata:
+- title
+- subtitle
+- og_description (which falls back to description)
 
-# build & deploy to production
-bin/bridgetown deploy
+### Post
 
-# load the site up within a Ruby console (IRB)
-bin/bridgetown console
-```
+The post layout shows the title and subtitle, then yields the post content inside a box.
 
-> Learn more: [Bridgetown CLI Documentation](https://www.bridgetownrb.com/docs/command-line-usage)
+## Creating a New Post
 
-## Deployment
+Each post should have the following metadata:
+- title
+- subtitle
+- date (not yet used)
+- categories (must be "posts", it's part of the url)
+- description: This is used in the head element for SEO purposes.
 
-You can deploy Bridgetown sites on hosts like Render or Vercel as well as traditional web servers by simply building and copying the output folder to your HTML root.
+Teh following metadata are optional:
+- og_description: This is used for the social media preview as well as the posts index page. If not
+  defined, this falls back to description.
+- og_image: Also for the social media preview, falls back to the postcard (defined in the site metadata).
+- conversation_link: When present, a link to `ruby.social` will be added to the bottom of the post. It is
+  two steps, but the post should be announced on mastodon, then that link should be added here. This enables
+  comments to be added (if someone has a mastodon login). In theory, that could allow discussion of the post
+  in a way that links back to it (and probably drives visibility).
 
-> Read the [Bridgetown Deployment Documentation](https://www.bridgetownrb.com/docs/deployment) for more information.
-
-## Contributing
-
-If repo is on GitHub:
-
-1. Fork it
-2. Clone the fork using `git clone` to your local development machine.
-3. Create your feature branch (`git checkout -b my-new-feature`)
-4. Commit your changes (`git commit -am 'Add some feature'`)
-5. Push to the branch (`git push origin my-new-feature`)
-6. Create a new Pull Request
+The content of the entry is just markdown.
 
 
 ## Credits
