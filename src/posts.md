@@ -9,7 +9,7 @@ title: Posts
     <article class="box post-summary">
       <h1 class="title is-4"><%= post.data.title %></h1>
       <h1 class="subtitle is-6"><%= post.data.subtitle %></h1>
-      <p><%= post.data.og_description %></p>
+      <p><%= post.data.og_description || post.data.description %></p>
     </article>
     </a>
   <% end %>
