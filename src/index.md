@@ -2,6 +2,11 @@
 layout: home
 title: The Story of Software
 image: "images/once-upon-a-time.jpg"
+description: |
+  Rockridge Solutions is a boutique software consulting firm that has been helping clients tell
+  the story of their businesses for 20 years. Let Todd and John leverage the power of Ruby on
+  Rails to help tell your story.
+
 og_description: Find out why building good software means telling the right story.
 ---
 
