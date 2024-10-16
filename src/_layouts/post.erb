@@ -13,6 +13,15 @@ layout: default
   <article class="box">
     <div class="content">
       <%= yield %>
+
+      <% if data.conversation_link.present? %>
+        <div class="notification is-primary is-light">
+          <a href="<%= data.conversation_link %>" target="_blank" class="is-flex is-justify-content-center">
+            <p class="my-0 mr-3">Continue the conversation on ruby.social</p>
+            <img src="/images/mastodon-logo-purple.svg" class="icon">
+          </a>
+        </div>
+      <% end %>
     </div>
   </article>
 </section>
