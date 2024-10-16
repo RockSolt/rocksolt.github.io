@@ -3,7 +3,7 @@ layout: post
 title: "Filterameter"
 subtitle: "Simplify and Speed Up Development of Rails Controllers"
 date: 2024-10-09
-categories: Filterameter
+categories: posts
 og_description: |
   Handling filter parameters for index endpoints in Rails controllers can often be a repetitive and error-prone task. The Filterameter gem aims to simplify this process by providing a declarative way to define filters. In this post, we’ll explore how Filterameter can help you write cleaner and more maintainable code.
 ---
