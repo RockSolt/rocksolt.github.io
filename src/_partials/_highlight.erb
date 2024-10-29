@@ -1,22 +1,21 @@
 <article class="message <%= highlight.message_class %>">
 
-  <%= optional_link highlight.link do %>
-    <div class="message-header <%= highlight.message_header_class %>">
-      <p><%= highlight.title %></p>
-    </div>
-    <div class="message-body content">
-      <img src="images/<%= highlight.logo %>" class="highlight-logo">
-      <%= markdownify highlight.description %>
+  <div class="message-header <%= highlight.message_header_class %>">
+    <p><%= highlight.title %></p>
+  </div>
 
-      <%# this is pretty specific to the contracting highlight for now %>
-      <% if highlight.show_recommendations %>
-        <div class="recommendations" data-controller="carousel" data-carousel-item-selector-value=".recommendation">
-          <% site.data.recommendations.each_with_index do |recommendation, index| %>
-            <%= render "recommendation", recommendation: recommendation, hidden: !index.zero? %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+  <div class="message-body content">
+    <img src="images/<%= highlight.logo %>" class="highlight-logo">
+    <%= markdownify highlight.description %>
+
+    <%# this is pretty specific to the contracting highlight for now %>
+    <% if highlight.show_recommendations %>
+      <div class="recommendations" data-controller="carousel" data-carousel-item-selector-value=".recommendation">
+        <% site.data.recommendations.each_with_index do |recommendation, index| %>
+          <%= render "recommendation", recommendation: recommendation, hidden: !index.zero? %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
 </article>
