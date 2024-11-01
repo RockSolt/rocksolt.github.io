@@ -8,7 +8,13 @@ $orange: #ee9a00;
 @use "syntax-highlighting";
 
 body.postcard {
-  background-image: url("/images/bay-bridge-from-bart-postcard.jpg");
+  background-image: -webkit-image-set(
+    url("/images/bay-bridge-from-bart-postcard.webp"),
+    url("/images/bay-bridge-from-bart-postcard.jpg"));
+  background-image: image-set(
+    url("/images/bay-bridge-from-bart-postcard.webp") type("image/webp"),
+    url("/images/bay-bridge-from-bart-postcard.jpg") type("image/jpeg"));
+
   background-repeat: no-repeat;
   background-position: top -30px center; // show a bit more of the tops of the buildings
 }
