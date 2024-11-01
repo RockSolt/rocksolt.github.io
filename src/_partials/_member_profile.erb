@@ -2,7 +2,11 @@
   <div class="card-content pb-1">
     <div class="columns">
       <div class="column">
-        <img src="images/<%= member.picture %>" alt="Todd Kummer">
+        <picture>
+          <source type="image/webp" srcset="images/<%= member.picture_webp %>">
+          <source type="image/jpeg" srcset="images/<%= member.picture %>">
+          <img src="images/<%= member.picture %>" alt="<%= member.name %>">
+        </picture>
       </div>
       <div class="column is-two-thirds">
         <p class="title mb-2"><%= member.name %></p>
