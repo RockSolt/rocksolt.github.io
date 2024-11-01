@@ -2,6 +2,7 @@
 layout: home
 title: The Story of Software
 image: "images/once-upon-a-time.jpg"
+image_alt: "pen writing 'Once upon a time'"
 description: |
   Rockridge Solutions is a boutique software consulting firm that has been helping clients tell
   the story of their businesses for 20 years. Let Todd and John leverage the power of Ruby on
