@@ -13,7 +13,11 @@ layout: default
     <div class="column is-three-fifths-desktop is-half-tablet">
       <article class="box">
         <h1 class="title is-4"><%= data.title %></h1>
-        <img src="<%= data.image %>" alt="<%= data.image_alt %>">
+        <picture>
+          <source type="image/webp" srcset="<%= data.image_webp %>">
+          <source type="image/jpeg" srcset="<%= data.image %>">
+          <img src="<%= data.image %>" alt="<%= data.image_alt %>">
+        </picture>
         <div class="content">
           <%= yield %>
         </div>
