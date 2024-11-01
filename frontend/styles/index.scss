@@ -32,6 +32,11 @@ body.postcard {
   margin-bottom: 16px;
 }
 
+// bulma removes the underline from links in some cases; this puts it back for blog posts
+.content p a {
+  text-decoration: underline;
+}
+
 .highlight-logo {
 	float: right;
 	max-width: 25%;
