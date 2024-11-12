@@ -48,7 +48,7 @@ Each post should have the following metadata:
 - categories (must be "posts", it's part of the url)
 - description: This is used in the head element for SEO purposes.
 
-Teh following metadata are optional:
+The following metadata are optional:
 - og_description: This is used for the social media preview as well as the posts index page. If not
   defined, this falls back to description.
 - og_image: Also for the social media preview, falls back to the postcard (defined in the site metadata).
