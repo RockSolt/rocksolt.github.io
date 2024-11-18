@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Posts
+sitemap: false
 ---
 
 <section class="section">
