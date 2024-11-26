@@ -1,11 +1,12 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
   static values = {
     itemSelector: String,
     activeClass: { type: String, default: 'active' },
-    delay: { type: Number, default: 8 }
+    delay: { type: Number, default: 8 },
   }
+
   connect() {
     this.currentIndex = 0
     this.slides = this.element.querySelectorAll(this.itemSelectorValue)
@@ -26,7 +27,8 @@ export default class extends Controller {
     const next = this.currentIndex + 1
     if (next == this.slideCount) {
       return 0
-    } else {
+    }
+    else {
       return next
     }
   }
