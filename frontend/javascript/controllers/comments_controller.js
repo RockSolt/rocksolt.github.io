@@ -8,7 +8,14 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log('Fetching replies for post:', this.postIdValue)
+    const observer = new IntersectionObserver(this.loadCommentsWhenVisible.bind(this))
+    observer.observe(this.element)
+  }
+
+  loadCommentsWhenVisible(entries, observer) {
+    if (!entries[0].isIntersecting) return
+
+    observer.disconnect()
     this.fetchAndBuildComments()
   }
 
