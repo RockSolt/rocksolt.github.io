@@ -52,7 +52,7 @@ The following metadata are optional:
 - og_description: This is used for the social media preview as well as the posts index page. If not
   defined, this falls back to description.
 - og_image: Also for the social media preview, falls back to the postcard (defined in the site metadata).
-- conversation_link: When present, a link to `ruby.social` will be added to the bottom of the post. It is
+- mastodon_account / mastodon_id: When present, a link to `ruby.social` will be added to the bottom of the post. It is
   two steps, but the post should be announced on mastodon, then that link should be added here. This enables
   comments to be added (if someone has a mastodon login). In theory, that could allow discussion of the post
   in a way that links back to it (and probably drives visibility).
