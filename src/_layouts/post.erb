@@ -11,17 +11,30 @@ layout: default
 
 <section class="section">
   <article class="box">
-    <div class="content">
+    <section class="content">
       <%= yield %>
+    </section>
 
-      <% if data.conversation_link.present? %>
+    <% if data.mastodon_id.present? %>
+
+      <hr>
+
+      <section >
+        <h1 class="title">Comments</h1>
+
+        <div class="ml-5" data-controller="comments" data-comments-post-id-value="<%= data.mastodon_id %>">
+        </div>
+
         <div class="notification is-primary is-light">
-          <a href="<%= data.conversation_link %>" target="_blank" class="is-flex is-justify-content-center">
+          <a href="<%= "https://ruby.social/#{data.mastodon_account}/#{data.mastodon_id}" %>" target="_blank" class="is-flex is-justify-content-center">
             <p class="my-0 mr-3">Continue the conversation on ruby.social</p>
             <img src="/images/mastodon-logo-purple.svg" class="icon" alt="Mastodon Logo">
           </a>
         </div>
-      <% end %>
-    </div>
+
+      </section>
+    <% end %>
+
   </article>
 </section>
+

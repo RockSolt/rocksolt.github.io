@@ -8,7 +8,8 @@ description: |
   Handling filter parameters for index endpoints in Rails controllers can often be a repetitive and error-prone task. The Filterameter
   gem aims to simplify this process by providing a declarative way to define search filters. In this post, we’ll explore how Filterameter
   can help you write cleaner and more maintainable code.
-conversation_link: https://ruby.social/@toddkummer/113313040222917964
+mastodon_account: "@toddkummer"
+mastodon_id: 113313040222917964
 ---
 
 Handling filter parameters for index endpoints in Rails controllers can often be a repetitive and error-prone task. The [Filterameter gem](https://github.com/RockSolt/filterameter) aims to simplify this process by providing a declarative way to define filters. In this post, we'll explore how Filterameter can help you write cleaner and more maintainable code.
