@@ -2,6 +2,7 @@
 layout: post
 title: "Filterameter"
 subtitle: "Simplify and Speed Up Development of Rails Controllers"
+og_image: https://rockridgesolutions.com/images/filterameter/controller-example.png
 date: 2024-10-09
 categories: posts
 description: |
