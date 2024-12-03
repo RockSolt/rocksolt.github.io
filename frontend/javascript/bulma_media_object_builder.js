@@ -116,6 +116,8 @@ export default class BulmaMediaObjectBuilder {
 
   buildMediaContainer(mediaAttachments) {
     const mediaContainer = this.createElementWithClasses('div', ['media-content'])
+    const grid = this.createElementWithClasses('div', ['grid'])
+    mediaContainer.appendChild(grid)
 
     mediaAttachments.forEach((media) => {
       let mediaElement
@@ -129,7 +131,9 @@ export default class BulmaMediaObjectBuilder {
         mediaElement.src = media.url
         mediaElement.controls = true
       }
-      mediaContainer.appendChild(mediaElement)
+      const cell = this.createElementWithClasses('div', ['cell'])
+      cell.appendChild(mediaElement)
+      grid.appendChild(cell)
     })
 
     return mediaContainer
