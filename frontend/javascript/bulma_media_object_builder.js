@@ -50,15 +50,15 @@ export default class BulmaMediaObjectBuilder {
     const mediaContent = this.createElementWithClasses('div', ['media-content'])
     const content = this.createElementWithClasses('div', ['content'])
 
-    content.appendChild(this.buildUserInfo(reply.account, reply.created_at))
+    content.appendChild(this.buildUserInfo(reply.account, reply.createdAt))
     content.insertAdjacentHTML('beforeend', reply.content)
 
     // Insert media attachments (images, videos, etc.)
-    if (reply.media_attachments && reply.media_attachments.length > 0) {
-      content.appendChild(this.buildMediaContainer(reply.media_attachments))
+    if (reply.mediaAttachments && reply.mediaAttachments.length > 0) {
+      content.appendChild(this.buildMediaContainer(reply.mediaAttachments))
     }
-    else if (reply.cardData) {
-      content.appendChild(this.buildCardForLink(reply.cardData))
+    else if (reply.card) {
+      content.appendChild(this.buildCardForLink(reply.card))
     }
 
     mediaContent.appendChild(content)
@@ -104,7 +104,7 @@ export default class BulmaMediaObjectBuilder {
     const userInfo = this.createElementWithClasses('div', ['grid'])
 
     const name = this.createElementWithClasses('div', ['cell'])
-    name.innerHTML = `<strong>${account.display_name}</strong> <a href="${account.url}" target="_blank">@${account.acct}</a>`
+    name.innerHTML = `<strong>${account.displayName}</strong> <a href="${account.url}" target="_blank">@${account.acct}</a>`
     userInfo.appendChild(name)
 
     const dateElement = this.createElementWithClasses('div', ['cell', 'has-text-right'])
