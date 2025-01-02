@@ -21,8 +21,8 @@ export default class extends Controller {
 
   async fetchAndBuildComments() {
     try {
-      const data = await MastodonService.fetchReplies(this.postIdValue)
-      this.buildComments(data.descendants)
+      const replies = await MastodonService.fetchReplies(this.postIdValue)
+      this.buildComments(replies)
     }
     catch (error) {
       console.error(error.message)
@@ -36,7 +36,7 @@ export default class extends Controller {
       const [comment, mediaContent] = BulmaMediaObjectBuilder.build(document, reply)
       parentNodes[reply.id] = mediaContent
 
-      parentNodes[reply.in_reply_to_id].appendChild(comment)
+      parentNodes[reply.parentId].appendChild(comment)
     })
   }
 }
