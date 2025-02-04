@@ -1,10 +1,13 @@
 import { Controller } from '@hotwired/stimulus'
 import BulmaMediaObjectBuilder from '../bulma_media_object_builder'
-import MastodonService from '../mastodon_service'
+import * as Mastodon from '../mastodon_service'
+import * as Bluesky from '../bluesky'
 
 export default class extends Controller {
   static values = {
+    userAccount: String,
     postId: String,
+    service: String,
   }
 
   connect() {
@@ -20,8 +23,15 @@ export default class extends Controller {
   }
 
   async fetchAndBuildComments() {
+    const service = { Mastodon, Bluesky }[this.serviceValue]
+
+    if (!service) {
+      console.error(`Unknown service: ${this.serviceValue}`)
+      return
+    }
+
     try {
-      const replies = await MastodonService.fetchReplies(this.postIdValue)
+      const replies = await service.fetchReplies({ userId: this.userAccountValue, postId: this.postIdValue })
       this.buildComments(replies)
     }
     catch (error) {
@@ -30,13 +40,14 @@ export default class extends Controller {
   }
 
   buildComments(replies) {
-    const parentNodes = { [this.postIdValue]: this.element }
+    const parentNodes = { }
 
     replies.forEach((reply) => {
       const [comment, mediaContent] = BulmaMediaObjectBuilder.build(document, reply)
       parentNodes[reply.id] = mediaContent
 
-      parentNodes[reply.parentId].appendChild(comment)
+      const parent = parentNodes[reply.parentId] || this.element
+      parent.appendChild(comment)
     })
   }
 }

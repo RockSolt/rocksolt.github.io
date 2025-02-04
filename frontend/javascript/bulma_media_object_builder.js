@@ -38,7 +38,7 @@ export default class BulmaMediaObjectBuilder {
     const avatarImage = this.createElementWithClasses('p', ['image', 'is-48x48'])
     mediaLeft.appendChild(avatarImage)
 
-    const img = this.document.createElement('img')
+    const img = this.createElementWithClasses('img', ['is-rounded'])
     img.src = avatarUrl
     img.alt = 'User Avatar'
     avatarImage.appendChild(img)
@@ -52,6 +52,10 @@ export default class BulmaMediaObjectBuilder {
 
     content.appendChild(this.buildUserInfo(reply.account, reply.createdAt))
     content.insertAdjacentHTML('beforeend', reply.content)
+
+    const facets = this.createElementWithClasses('div', ['pre'])
+    facets.textContent = JSON.stringify(reply.facets, null, 2)
+    content.appendChild(facets)
 
     // Insert media attachments (images, videos, etc.)
     if (reply.mediaAttachments && reply.mediaAttachments.length > 0) {
@@ -67,7 +71,7 @@ export default class BulmaMediaObjectBuilder {
   }
 
   buildCardForLink(cardData) {
-    const card = this.createElementWithClasses('div', ['card'])
+    const card = this.createElementWithClasses('div', ['card', 'link-preview-card'])
 
     if (cardData.image) {
       const cardImage = this.createElementWithClasses('div', ['card-image'])
@@ -101,10 +105,12 @@ export default class BulmaMediaObjectBuilder {
   }
 
   buildUserInfo(account, createdAt) {
-    const userInfo = this.createElementWithClasses('div', ['grid'])
+    const userInfo = this.createElementWithClasses('div', ['grid', 'mb-2'])
 
     const name = this.createElementWithClasses('div', ['cell'])
-    name.innerHTML = `<strong>${account.displayName}</strong> <a href="${account.url}" target="_blank">@${account.acct}</a>`
+    name.innerHTML
+      = `<span class="has-text-weight-bold">${account.displayName}</span> <br> 
+         <a href="${account.url}" target="_blank" class="has-text-dark has-text-weight-medium is-size-6">@${account.acct}</a>`
     userInfo.appendChild(name)
 
     const dateElement = this.createElementWithClasses('div', ['cell', 'has-text-right'])
@@ -123,8 +129,8 @@ export default class BulmaMediaObjectBuilder {
       let mediaElement
       if (media.type === 'image') {
         mediaElement = this.createElementWithClasses('img', ['image'])
-        mediaElement.src = media.preview_url
-        mediaElement.alt = 'Attached image'
+        mediaElement.src = media.preview_url || media.src // TODO: normalize these
+        mediaElement.alt = media.alt
       }
       else if (media.type === 'video') {
         mediaElement = this.document.createElement('video')

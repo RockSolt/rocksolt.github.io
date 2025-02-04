@@ -1,3 +1,7 @@
+export async function fetchReplies({ postId }) {
+  return MastodonService.fetchReplies(postId)
+}
+
 export default class MastodonService {
   static async fetchReplies(postId) {
     const url = `https://ruby.social/api/v1/statuses/${postId}/context`
