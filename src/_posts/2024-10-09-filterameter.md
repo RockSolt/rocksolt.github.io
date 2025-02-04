@@ -11,6 +11,8 @@ description: |
   can help you write cleaner and more maintainable code.
 mastodon_account: "@toddkummer"
 mastodon_id: 113313040222917964
+bluesky_account: "did:plc:46gmgfl3bvinp7y3qixc7o2w"
+bluesky_id: "3lcgdbbjdgk2j"
 ---
 
 Handling filter parameters for index endpoints in Rails controllers can often be a repetitive and error-prone task. The [Filterameter gem](https://github.com/RockSolt/filterameter) aims to simplify this process by providing a declarative way to define filters. In this post, we'll explore how Filterameter can help you write cleaner and more maintainable code.

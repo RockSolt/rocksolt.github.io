@@ -82,3 +82,30 @@ main .section {
 .post-summary:hover {
   background-color:  hsl(0, 0%, 96%);
 }
+
+.link-preview-card {
+  max-width: 400px; /* Max width for the card */
+  margin: 20px;
+}
+
+.card-image-img {
+  max-width: 100%;  /* Ensure the image doesn't overflow */
+  height: auto;     /* Maintain aspect ratio */
+  max-height: 200px; /* Optional: control image height */
+  object-fit: cover; /* Make sure image covers the space */
+}
+
+.card-content {
+  padding: 15px;
+}
+
+/* Optional: Adjust for small screens */
+@media (max-width: 768px) {
+  .link-preview-card {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
+div.media-content > article.media {
+  margin-left: -40px;
+}

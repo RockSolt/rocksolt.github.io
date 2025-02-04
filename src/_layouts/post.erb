@@ -15,26 +15,41 @@ layout: default
       <%= yield %>
     </section>
 
-    <% if data.mastodon_id.present? %>
-
+    <% if data.mastodon_id.present? || data.bluesky_id.present? %>
       <hr>
-
       <section >
         <h1 class="title">Comments</h1>
 
-        <div class="ml-5" data-controller="comments" data-comments-post-id-value="<%= data.mastodon_id %>">
-        </div>
+        <% if data.bluesky_id.present? %>
+          <div class="ml-5" data-controller="comments" 
+                            data-comments-service-value="Bluesky"
+                            data-comments-user-account-value="<%= data.bluesky_account %>" 
+                            data-comments-post-id-value="<%= data.bluesky_id %>">
+          </div>
 
-        <div class="notification is-primary is-light">
-          <a href="<%= "https://ruby.social/#{data.mastodon_account}/#{data.mastodon_id}" %>" target="_blank" class="is-flex is-justify-content-center">
-            <p class="my-0 mr-3">Continue the conversation on ruby.social</p>
-            <img src="/images/mastodon-logo-purple.svg" class="icon" alt="Mastodon Logo">
-          </a>
-        </div>
+          <div class="notification is-primary is-light">
+            <a href="<%= "https://bsky.app/profile/#{data.bluesky_account}/post/#{data.bluesky_id}" %>" target="_blank" class="is-flex is-justify-content-center">
+              <p class="my-0 mr-3">Continue the conversation on Bluesky</p>
+              <img src="/images/bluesky_media_kit_logo_svgs.svg" class="icon is-medium" alt="Bluesky Logo">
+            </a>
+          </div>
+        <% end %>
 
+        <% if data.mastodon_id.present? %>
+          <div class="ml-5" data-controller="comments" 
+                            data-comments-service-value="Mastodon" 
+                            data-comments-post-id-value="<%= data.mastodon_id %>">
+          </div>
+
+          <div class="notification is-primary is-light">
+            <a href="<%= "https://ruby.social/#{data.mastodon_account}/#{data.mastodon_id}" %>" target="_blank" class="is-flex is-justify-content-center">
+              <p class="my-0 mr-3">Continue the conversation on ruby.social</p>
+              <img src="/images/mastodon-logo-purple.svg" class="icon" alt="Mastodon Logo">
+            </a>
+          </div>
+        <% end %>
       </section>
     <% end %>
 
   </article>
 </section>
-
