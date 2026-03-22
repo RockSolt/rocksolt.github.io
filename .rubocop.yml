@@ -1,0 +1,18 @@
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - Rakefile
+    - plugins/site_builder.rb
+
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: normal
+
+Layout/IndentationWidth:
+  Enabled: true
+
+Style/ClassAndModuleChildren:
+  Enabled: true

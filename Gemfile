@@ -36,3 +36,8 @@ gem "puma", "< 7"
 # gem "nokolexbor", "~> 0.4"
 
 gem "bridgetown-sitemap", "~> 2.0"
+
+group :development, :test do
+  gem "rubocop", require: false
+  gem "rubocop-rails-omakase", require: false
+end
