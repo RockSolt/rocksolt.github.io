@@ -15,15 +15,15 @@ layout: default
       <%= yield %>
     </section>
 
-    <% if data.mastodon_id.present? || data.bluesky_id.present? %>
+    <% if !data.mastodon_id.nil? || !data.bluesky_id.nil? %>
       <hr>
       <section >
         <h1 class="title">Comments</h1>
 
-        <% if data.bluesky_id.present? %>
-          <div class="ml-5" data-controller="comments" 
+        <% if !data.bluesky_id.nil? %>
+          <div class="ml-5" data-controller="comments"
                             data-comments-service-value="Bluesky"
-                            data-comments-user-account-value="<%= data.bluesky_account %>" 
+                            data-comments-user-account-value="<%= data.bluesky_account %>"
                             data-comments-post-id-value="<%= data.bluesky_id %>">
           </div>
 
@@ -35,9 +35,9 @@ layout: default
           </div>
         <% end %>
 
-        <% if data.mastodon_id.present? %>
-          <div class="ml-5" data-controller="comments" 
-                            data-comments-service-value="Mastodon" 
+        <% if !data.mastodon_id.nil? %>
+          <div class="ml-5" data-controller="comments"
+                            data-comments-service-value="Mastodon"
                             data-comments-post-id-value="<%= data.mastodon_id %>">
           </div>
 

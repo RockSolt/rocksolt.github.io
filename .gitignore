@@ -34,3 +34,8 @@ yarn-debug.log*
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
