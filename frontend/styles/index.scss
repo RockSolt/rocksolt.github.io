@@ -7,6 +7,10 @@ $orange: #ee9a00;
 
 @use "syntax-highlighting";
 
+:root {
+  --ruby-red: #a91401;
+}
+
 body.postcard {
   background-image: -webkit-image-set(
     url("/images/bay-bridge-from-bart-postcard.webp"),
@@ -19,12 +23,17 @@ body.postcard {
   background-position: top -30px center; // show a bit more of the tops of the buildings
 }
 
-.ruby-red {
-  background-color:#a91401;
-
-  & p {
-    @extend .has-text-white
+.is-ruby-red {
+  .message-header {
+    background-color: var(--ruby-red);
   }
+}
+
+.highlight {
+  .message-header {
+    color: hsl(var(--bulma-white-h), var(--bulma-white-s), var(--bulma-white-l));
+  }
+
 }
 
 // the content class give descendant p elements a margin bottom; this adds the same to code blocks
