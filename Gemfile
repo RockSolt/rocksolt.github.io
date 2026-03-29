@@ -36,6 +36,8 @@ gem "puma", "< 7"
 # gem "nokolexbor", "~> 0.4"
 
 gem "bridgetown-sitemap", "~> 3.0"
+gem "bulma-phlex", github: "rocksolt/bulma-phlex"
+gem "literal", "~> 1.9"
 
 group :development, :test do
   gem "rubocop", require: false
